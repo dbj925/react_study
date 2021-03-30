@@ -8,7 +8,7 @@ function MainPage(){
      React.useEffect(function(){
         axios.get('https://dec1ca52-2d31-476e-993d-eb4038a2d1a1.mock.pstmn.io/products')
         .then(function(result){
-            console.log('result :', result)
+            console.log('result :', result);
             const products = result.data.products;
             setProducts(products);
         }).catch(function(error){
@@ -19,12 +19,6 @@ function MainPage(){
 
     return(
         <div>
-            <div id="header">
-                <div id="header-area">
-                    <img src="images/icons/logo.png" alt="logo" />
-                </div>
-            </div>
-            <div id="body">
                 <div id="banner">
                     <img src="images/banners/banner1.png" alt=" banner1" />
                 </div>
@@ -34,7 +28,7 @@ function MainPage(){
                         products.map(function(product,index){
                             return(
                                 <div className ="product-card">
-                                    <Link className="product-link" to={`/products/${index}`}> 
+                                    <Link className="product-link" to={`/products/${product.id}`}> 
                                     <div>
                                         <img className="product-img" src={product.imageUrl} />
                                     </div>
@@ -57,8 +51,6 @@ function MainPage(){
                     }
                 </div>
 
-            </div>
-            <div id="footer"></div>
         </div>
     )
 }
