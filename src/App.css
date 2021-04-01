@@ -25,7 +25,8 @@ html, body, #root, #root > div{
   height: 36px;
 }
 
-#body{height: 100vh;width: 1024px;
+#body{
+  min-height: 100vh;width: 1024px;
   margin: 0 auto;
   padding-bottom: 24px;}
 
